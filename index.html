@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h3>Payment form example</h3>
+            </div>
+            <div class="card-body">
+                <!-- Alert message -->
+                <div class="alert alert-danger" role="alert">
+                    Some fields are missing
+                </div>
+                
+                <form>
+                    <!-- First row - Card, CVC, Amount -->
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label for="cardNumber" class="form-label">Card #</label>
+                            <input type="text" class="form-control" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" required autocomplete="off" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="16" 
+                        />
+                            
+                        </div>
+                        <div class="col-md-4">
+                            <label for="cvcNumber" class="form-label">CVC #</label>
+                            <input type="text" class="form-control" id="cvcNumber" placeholder="0000" maxlength="4" required autocomplete="off" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="4" >
+                        </div>
+                        <div class="col-md-4">
+                            <label for="amount" class="form-label">Amount</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="text" class="form-control" id="amount" placeholder="Amount" required autocomplete="off" onkeypress="return event.charCode >= 48 && event.charCode <= 57" >
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Second row - First Name, Last Name -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName">
+                        </div>
+                    </div>
+                    
+                    <!-- Third row - City, State, Postal Code -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="state" class="form-label">State</label>
+                            <select class="form-select" id="state">
+                                <option selected>Pick a state</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <!-- Add more states as needed -->
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="postalCode" class="form-label">Postal Code</label>
+                            <input type="text" class="form-control" id="postalCode">
+                        </div>
+                    </div>
+                    
+                    <!-- Fourth row - We accept, Message -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">We accept:</label>
+                            <div class="payment-icons">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" checked>
+                                    <label class="form-check-label" for="creditCard">
+                                    <i class="fa-brands fa-cc-discover"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="visa">
+                                    <label class="form-check-label" for="visa">
+                                      <i class="fab fa-cc-visa"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="mastercard">
+                                    <label class="form-check-label" for="mastercard">
+                                      <i class="fab fa-cc-mastercard"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="americanExpress">
+                                    <label class="form-check-label" for="americanExpress">
+                                      <i class="fab fa-cc-amex"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Add any notes here."></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-end">
+                <button type="button" class="btn btn-secondary me-2">Cancel</button>
+                <button type="button" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.1.0/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.1.0/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</body>
+</html>
